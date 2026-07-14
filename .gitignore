@@ -1,0 +1,16 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.tmp
+*~
+
+# Never commit secrets or credentials
+.secrets/
+*.dpapi
+*.env
+.env*
+
+# Local caches / QA profiles
+.edge-qa*/
+node_modules/
