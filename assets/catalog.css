@@ -109,9 +109,30 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.6rem 1.5rem;justify-content:space-
 .lb-close{position:absolute;top:1rem;right:1.2rem;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(0,0,0,.4);color:#fff;font-size:1.5rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .lb-close:hover{background:var(--brass);border-color:var(--brass)}
 
+@page{size:A4;margin:15mm 14mm 18mm}
 @media print{
   :root{--paper:#fff;--paper-2:#fff;--card:#fff;--line:#cfc7b6;--body:#232019;--heading:#111;--neutral:#4a463d}
-  .bar,.lb,.ohero-video{ } .bar{display:none}
+  html,body{background:#fff}
+  body{font-size:10.5pt}
+  .bar{display:none}
+  .btn,.backlink,.pager,.cta-actions,.lb{display:none!important}
+  section{padding-block:0;margin-block:0}
+
+  /* office name page = a dark cover/divider on page 1 */
   .ohero,.signature,.cta{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  section{break-inside:avoid}
+  .ohero{min-height:calc(100vh - 44mm);display:flex;align-items:center;break-after:page}
+  .ohero .ohero-grid{grid-template-columns:1fr}
+  .ohero-video,.ohero .vcap{display:none!important}
+
+  /* keep blocks whole, let long galleries flow across pages */
+  .cat-head,.signature,.gallery img,.gallery{break-inside:avoid}
+  .gallery{page-break-inside:avoid}
+  a[href^="http"]::after{content:""}
+  footer{background:#fff;color:#4a463d;border-top:1px solid var(--line)}
+
+  /* brand footer repeats on every printed page */
+  body::after{content:"BizCity Group \00b7 Workspace Catalogue \00b7 2026";
+    position:fixed;left:0;right:0;bottom:0;text-align:center;font-family:var(--sans);
+    font-size:8pt;letter-spacing:.22em;text-transform:uppercase;color:#977634;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
