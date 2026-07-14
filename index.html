@@ -239,7 +239,7 @@
   .svc{background:var(--card);border:1px solid var(--line);border-radius:14px;
     overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow)}
   .svc .slot{border-radius:0;border:0;border-bottom:1px dashed var(--brass);min-height:130px}
-  .svc .body{padding:.95rem 1rem 1.15rem}
+  .svc .body{padding:.9rem 1rem;text-align:center;display:flex;flex-direction:column;align-items:center;gap:.15rem}
   .svc h3{font-size:var(--step-1)}
   .svc p{color:var(--neutral);font-size:var(--step--1);line-height:1.5;margin-top:.3rem}
   .svc.feature{grid-column:span 2}
@@ -411,9 +411,9 @@
   <div class="bar-in">
     <a class="brandlogo" href="index.html"><img src="assets/logos/logo-mark.png" alt="Biz City Business Centre"></a>
     <nav class="navlinks" aria-label="Catalogue contents">
-      <a href="#why"><i>01</i> Why</a>
-      <a href="#locations"><i>02</i> Houses</a>
-      <a href="#spaces"><i>03</i> Spaces</a>
+      <a href="#locations"><i>01</i> Houses</a>
+      <a href="#spaces"><i>02</i> Spaces</a>
+      <a href="#amenities"><i>03</i> On-site</a>
       <a href="#contact"><i>04</i> Visit</a>
     </nav>
     <button class="btn" onclick="window.print()" aria-label="Download or print as PDF">
@@ -437,13 +437,12 @@
       <div>
         <p class="eyebrow">A Guided Walkthrough · Dubai</p>
         <h1>Thoughtful &amp;<br><em>Functional</em> workspaces.</h1>
-        <p class="lede">Walk through our private offices, coworking and premium meeting spaces across three landmark Dubai addresses.</p>
         <div class="cover-meta">
           <span><b>3</b> Landmark locations</span>
           <span><b>10</b> Space types</span>
           <span><b>2026</b> Edition</span>
         </div>
-        <a class="tour-btn" href="#why">Begin the walkthrough
+        <a class="tour-btn" href="#locations">See the spaces
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="m6 13 6 6 6-6"/></svg>
         </a>
       </div>
@@ -452,40 +451,10 @@
                poster="assets/images/hero-portrait-poster.jpg" aria-label="BizCity Group brand showcase video">
           <source src="assets/video/hero-portrait.mp4" type="video/mp4">
         </video>
-        <p class="media-cap">Now playing - tap the video for sound.</p>
       </div>
     </div>
   </div>
 </header>
-
-<!-- ============ CONTENTS ============ -->
-<section id="contents" class="contents">
-  <div class="wrap">
-    <p class="eyebrow">Contents</p>
-    <div class="section-head" style="margin-bottom:0"><h2 style="font-size:var(--step-2)">Inside this catalogue.</h2></div>
-    <nav class="toc" aria-label="Catalogue contents">
-      <a href="#why"><span class="num">01</span><span class="label">Why BizCity</span><span class="dots"></span><span class="pg">Overview</span></a>
-      <a href="#locations"><span class="num">02</span><span class="label">The Three Houses</span><span class="dots"></span><span class="pg">Locations</span></a>
-      <a href="#spaces"><span class="num">03</span><span class="label">Spaces &amp; Services</span><span class="dots"></span><span class="pg">10 space types</span></a>
-      <a href="#amenities"><span class="num">04</span><span class="label">Amenities &amp; Hours</span><span class="dots"></span><span class="pg">On-site</span></a>
-      <a href="#proof"><span class="num">05</span><span class="label">What Members Say</span><span class="dots"></span><span class="pg">Reviews</span></a>
-      <a href="#contact"><span class="num">06</span><span class="label">Visit &amp; Contact</span><span class="dots"></span><span class="pg">Get in touch</span></a>
-    </nav>
-  </div>
-</section>
-
-<!-- ============ WHY ============ -->
-<section id="why">
-  <div class="wrap">
-    <p class="eyebrow">Why BizCity</p>
-    <div class="why-strip">
-      <span><b>Prime addresses</b> - DWTC &amp; Sheikh Zayed Road</span>
-      <span><b>Turnkey &amp; ready</b> - move in the same day</span>
-      <span><b>Culturally considered</b> - The Majlis &amp; more</span>
-      <span><b>More than a desk</b> - studios, booths &amp; café</span>
-    </div>
-  </div>
-</section>
 
 <!-- ============ LOCATIONS OVERVIEW ============ -->
 <section id="locations" class="band">
@@ -493,7 +462,6 @@
     <div class="section-head">
       <p class="eyebrow">The Three Houses</p>
       <h2>Choose your address.</h2>
-      <p>Three distinct locations, one standard of service. Each with its own character and room to grow.</p>
     </div>
     <div class="loc-grid">
 
@@ -503,7 +471,6 @@
           <p class="kicker">House 01</p>
           <h3>Biz City</h3>
           <p class="addr">City Tower 2, 14th Floor, Sheikh Zayed Road</p>
-          <p>The connected hub on Dubai's main artery - energetic, central and ideal for growing teams.</p>
           <span class="loc-link">View the space &rarr;</span>
         </div>
       </a>
@@ -514,7 +481,6 @@
           <p class="kicker">House 02</p>
           <h3>Biz Elite</h3>
           <p class="addr">Office 2701, 27th Floor, Sheikh Rashid Tower, DWTC</p>
-          <p>A refined address at the heart of the DWTC - polished spaces for established businesses.</p>
           <span class="loc-link">View the space &rarr;</span>
         </div>
       </a>
@@ -525,7 +491,6 @@
           <p class="kicker">House 03</p>
           <h3>Biz Platinum</h3>
           <p class="addr">21st Floor, Sheikh Rashid Tower, DWTC</p>
-          <p>Our flagship on the 21st floor - panoramic, private and built for family offices and leadership.</p>
           <span class="loc-link">View the space &rarr;</span>
         </div>
       </a>
@@ -540,28 +505,27 @@
     <div class="section-head">
       <p class="eyebrow">Spaces &amp; Services</p>
       <h2>Ten ways to work.</h2>
-      <p>Mix and match across any location. Every space is serviced, connected and ready to go.</p>
     </div>
     <div class="svc-grid">
 
       <article class="svc feature">
         <img class="ph zoomable" src="assets/images/svc-majlis.jpg" alt="The Majlis lounge">
-        <div class="body"><span class="flag-inline">Signature</span><h3>The Majlis</h3><p>A culturally inspired gathering space to host clients and close deals in comfort.</p></div>
+        <div class="body"><span class="flag-inline">Signature</span><h3>The Majlis</h3></div>
       </article>
 
       <article class="svc feature">
         <img class="ph zoomable" src="assets/images/svc-podcast.jpg" alt="Podcast recording studio">
-        <div class="body"><span class="flag-inline">Signature</span><h3>Podcast Rooms</h3><p>Professional recording studios engineered for clear, pristine sound - built for content-first brands.</p></div>
+        <div class="body"><span class="flag-inline">Signature</span><h3>Podcast Rooms</h3></div>
       </article>
 
-      <article class="svc"><img class="ph zoomable" src="assets/images/bizelite-private-office.jpg" alt="Private office"><div class="body"><h3>Private Offices</h3><p>Tailored turnkey offices, ready the day you move in.</p></div></article>
-      <article class="svc"><img class="ph zoomable" src="assets/images/svc-coworking.jpg" alt="Coworking space"><div class="body"><h3>Coworking</h3><p>Flexible shared desks in a connected community.</p></div></article>
-      <article class="svc"><img class="ph zoomable" src="assets/images/svc-meeting-room.jpg" alt="Meeting room"><div class="body"><h3>Meeting Rooms</h3><p>Modern, tech-ready rooms for focused discussion.</p></div></article>
-      <article class="svc"><img class="ph zoomable" src="assets/images/svc-conference.jpg" alt="Conference room"><div class="body"><h3>Conference Rooms</h3><p>Tech-enabled spaces for larger presentations.</p></div></article>
-      <article class="svc"><img class="ph zoomable" src="assets/images/svc-breakout.jpg" alt="Breakout lounge"><div class="body"><h3>Breakout Rooms</h3><p>Relaxed areas for brainstorming and resets.</p></div></article>
-      <article class="svc"><img class="ph zoomable" src="assets/images/svc-family-office.jpg" alt="Single family office lounge"><div class="body"><h3>Single Family Offices</h3><p>Wealth management and lifestyle services, privately.</p></div></article>
-      <article class="svc"><img class="ph zoomable" src="assets/images/svc-phone-booth.jpg" alt="Private phone booth pods"><div class="body"><h3>Phone Booths</h3><p>Private, soundproofed pods for calls on the go.</p></div></article>
-      <article class="svc"><img class="ph zoomable" src="assets/images/svc-cafe.jpg" alt="In-house café"><div class="body"><h3>Café</h3><p>An in-house café to meet, refuel and recharge.</p></div></article>
+      <article class="svc"><img class="ph zoomable" src="assets/images/bizelite-private-office.jpg" alt="Private office"><div class="body"><h3>Private Offices</h3></div></article>
+      <article class="svc"><img class="ph zoomable" src="assets/images/svc-coworking.jpg" alt="Coworking space"><div class="body"><h3>Coworking</h3></div></article>
+      <article class="svc"><img class="ph zoomable" src="assets/images/svc-meeting-room.jpg" alt="Meeting room"><div class="body"><h3>Meeting Rooms</h3></div></article>
+      <article class="svc"><img class="ph zoomable" src="assets/images/svc-conference.jpg" alt="Conference room"><div class="body"><h3>Conference Rooms</h3></div></article>
+      <article class="svc"><img class="ph zoomable" src="assets/images/svc-breakout.jpg" alt="Breakout lounge"><div class="body"><h3>Breakout Rooms</h3></div></article>
+      <article class="svc"><img class="ph zoomable" src="assets/images/svc-family-office.jpg" alt="Single family office lounge"><div class="body"><h3>Single Family Offices</h3></div></article>
+      <article class="svc"><img class="ph zoomable" src="assets/images/svc-phone-booth.jpg" alt="Private phone booth pods"><div class="body"><h3>Phone Booths</h3></div></article>
+      <article class="svc"><img class="ph zoomable" src="assets/images/svc-cafe.jpg" alt="In-house café"><div class="body"><h3>Café</h3></div></article>
 
     </div>
   </div>
@@ -584,28 +548,6 @@
       <p class="kicker">Opening hours</p>
       <p class="big">Mon - Sat</p>
       <p>8:30 AM - 6:00 PM</p>
-      <hr>
-      <p class="kicker" style="margin-bottom:.4rem">Book a viewing</p>
-      <p style="color:#efe9db">Tours available daily by appointment. Ask your BizCity contact to arrange a walkthrough.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TESTIMONIAL ============ -->
-<section id="proof">
-  <div class="wrap">
-    <p class="eyebrow">What members say · rated 5.0</p>
-    <div class="reviews">
-      <figure class="review">
-        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-        <blockquote>A very well laid out Business Center located at an excellent location. It is well equipped with all the latest office amenities.</blockquote>
-        <figcaption>Vinay Jaitly <span>· verified review</span></figcaption>
-      </figure>
-      <figure class="review">
-        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-        <blockquote>BizCity is a fantastic workspace! The environment is incredibly enjoyable, perfect for productive work.</blockquote>
-        <figcaption>Jamshed <span>· verified review</span></figcaption>
-      </figure>
     </div>
   </div>
 </section>
@@ -615,7 +557,6 @@
   <div class="wrap">
     <p class="eyebrow">Let's talk</p>
     <h2>Come see it in person.</h2>
-    <p>Tell us which house caught your eye and we'll walk you through it. Your space can be ready the same week.</p>
     <div class="cta-actions">
       <a class="btn" href="https://wa.me/971507101488">Talk to us on WhatsApp</a>
       <a class="btn btn-line" href="https://bizcitygroup.com/contact-us/">Arrange a private viewing</a>
