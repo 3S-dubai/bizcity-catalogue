@@ -120,6 +120,15 @@
   .btn:hover{background:var(--brass-deep);border-color:var(--brass-deep)}
   .btn-ghost{background:transparent;color:var(--brass-deep)}
   .btn-ghost:hover{background:var(--paper-2);color:var(--brass-deep)}
+  @media(max-width:520px){
+    .bar-in{gap:.35rem;padding:.5rem .65rem}
+    .brandlogo img{height:26px}
+    .navlinks{gap:0;flex:0 0 auto}
+    .navlinks a{padding:.35rem .45rem}
+    .navlinks a i{display:none}
+    .bar-in>.btn{display:none}
+    .cover-meta{gap:.45rem .8rem}
+  }
   a:focus-visible,button:focus-visible{outline:2px solid var(--brass-deep);outline-offset:2px;border-radius:6px}
 
   /* ---------- cover ---------- */
@@ -354,8 +363,8 @@
     .print-cover img{height:120px;width:auto;margin:0 auto 2.4rem}
     .print-cover .edition{font-family:var(--sans);text-transform:uppercase;letter-spacing:.34em;
       font-size:9pt;color:var(--brass-deep);font-weight:700;margin-bottom:1.3rem}
-    .print-cover h1{font-size:33pt;color:#15171c;line-height:1.05;margin-bottom:1.1rem}
-    .print-cover h1 em{font-style:italic;color:var(--brass-deep)}
+    .print-cover .print-title{font-family:var(--serif);font-size:33pt;font-weight:600;color:#15171c;line-height:1.05;margin:0 0 1.1rem;letter-spacing:-.01em}
+    .print-cover .print-title em{font-style:italic;color:var(--brass-deep)}
     .print-cover .sub{color:#4a463d;font-size:12pt;max-width:46ch;margin:0 auto;line-height:1.5}
     .print-cover .yr{margin-top:2.4rem;font-family:var(--serif);font-size:15pt;color:var(--brass-deep);letter-spacing:.08em}
 
@@ -409,12 +418,9 @@
 <!-- ============ TOOLBAR ============ -->
 <div class="bar">
   <div class="bar-in">
-    <a class="brandlogo" href="index.html"><img src="assets/logos/logo-mark.png" alt="Biz City Business Centre"></a>
+    <a class="brandlogo" href="index.html"><img src="assets/logos/logo-mark.png" alt="BizCity Group"></a>
     <nav class="navlinks" aria-label="Catalogue contents">
-      <a href="#locations"><i>01</i> Houses</a>
-      <a href="#spaces"><i>02</i> Spaces</a>
-      <a href="#amenities"><i>03</i> On-site</a>
-      <a href="#contact"><i>04</i> Visit</a>
+      <a href="#companies"><i>01</i> Companies</a>
     </nav>
     <button class="btn" onclick="window.print()" aria-label="Download or print as PDF">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
@@ -427,9 +433,9 @@
 <header class="cover">
   <div class="wrap">
     <div class="print-cover">
-      <img src="assets/logos/logo-mark.png" alt="Biz City">
+      <img src="assets/logos/logo-mark.png" alt="BizCity Group">
       <p class="edition">Workspace Collection</p>
-      <h1>Thoughtful &amp; <em>Functional</em> Workspaces</h1>
+      <p class="print-title">Thoughtful &amp; <em>Functional</em> Workspaces</p>
       <p class="sub">Private offices, coworking and premium meeting spaces across three landmark Dubai addresses.</p>
       <p class="yr">2026 Edition</p>
     </div>
@@ -442,7 +448,7 @@
           <span><b>10</b> Space types</span>
           <span><b>2026</b> Edition</span>
         </div>
-        <a class="tour-btn" href="#locations">See the spaces
+        <a class="tour-btn" href="#companies">Explore the companies
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="m6 13 6 6 6-6"/></svg>
         </a>
       </div>
@@ -456,123 +462,45 @@
   </div>
 </header>
 
-<!-- ============ LOCATIONS OVERVIEW ============ -->
-<section id="locations" class="band">
+<!-- ============ COMPANY OVERVIEW ============ -->
+<section id="companies" class="band">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">The Three Houses</p>
-      <h2>Choose your address.</h2>
+      <p class="eyebrow">The Three Companies</p>
+      <h2>Choose your company.</h2>
     </div>
     <div class="loc-grid">
 
       <a class="loc-card" href="biz-city.html">
         <img class="ph" src="assets/images/loc-biz-city.jpg" alt="Dubai skyline by Biz City on Sheikh Zayed Road">
         <div class="body">
-          <p class="kicker">House 01</p>
+          <p class="kicker">Company 01</p>
           <h3>Biz City</h3>
           <p class="addr">City Tower 2, 14th Floor, Sheikh Zayed Road</p>
-          <span class="loc-link">View the space &rarr;</span>
+          <span class="loc-link">Explore Biz City &rarr;</span>
         </div>
       </a>
 
       <a class="loc-card" href="biz-elite.html">
         <img class="ph" src="assets/images/loc-biz-elite.jpg?v=2" alt="Sheikh Rashid Tower at Dubai World Trade Centre, home of Biz Elite">
         <div class="body">
-          <p class="kicker">House 02</p>
+          <p class="kicker">Company 02</p>
           <h3>Biz Elite</h3>
           <p class="addr">Office 2701, 27th Floor, Sheikh Rashid Tower, DWTC</p>
-          <span class="loc-link">View the space &rarr;</span>
+          <span class="loc-link">Explore Biz Elite &rarr;</span>
         </div>
       </a>
 
       <a class="loc-card" href="biz-platinum.html">
         <img class="ph" src="assets/images/loc-biz-platinum.jpg?v=2" alt="Sheikh Rashid Tower at Dubai World Trade Centre, home of Biz Platinum">
         <div class="body">
-          <p class="kicker">House 03</p>
+          <p class="kicker">Company 03</p>
           <h3>Biz Platinum</h3>
           <p class="addr">21st Floor, Sheikh Rashid Tower, DWTC</p>
-          <span class="loc-link">View the space &rarr;</span>
+          <span class="loc-link">Explore Biz Platinum &rarr;</span>
         </div>
       </a>
 
-    </div>
-  </div>
-</section>
-
-<!-- ============ SPACES & SERVICES ============ -->
-<section id="spaces" class="band">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Spaces &amp; Services</p>
-      <h2>Ten ways to work.</h2>
-    </div>
-    <div class="svc-grid">
-
-      <article class="svc feature">
-        <img class="ph zoomable" src="assets/images/svc-majlis.jpg" alt="The Majlis lounge">
-        <div class="body"><span class="flag-inline">Signature</span><h3>The Majlis</h3></div>
-      </article>
-
-      <article class="svc feature">
-        <img class="ph zoomable" src="assets/images/svc-podcast.jpg" alt="Podcast recording studio">
-        <div class="body"><span class="flag-inline">Signature</span><h3>Podcast Rooms</h3></div>
-      </article>
-
-      <article class="svc"><img class="ph zoomable" src="assets/images/bizelite-private-office.jpg" alt="Private office"><div class="body"><h3>Private Offices</h3></div></article>
-      <article class="svc"><img class="ph zoomable" src="assets/images/svc-coworking.jpg" alt="Coworking space"><div class="body"><h3>Coworking</h3></div></article>
-      <article class="svc"><img class="ph zoomable" src="assets/images/svc-meeting-room.jpg" alt="Meeting room"><div class="body"><h3>Meeting Rooms</h3></div></article>
-      <article class="svc"><img class="ph zoomable" src="assets/images/svc-conference.jpg" alt="Conference room"><div class="body"><h3>Conference Rooms</h3></div></article>
-      <article class="svc"><img class="ph zoomable" src="assets/images/svc-breakout.jpg" alt="Breakout lounge"><div class="body"><h3>Breakout Rooms</h3></div></article>
-      <article class="svc"><img class="ph zoomable" src="assets/images/svc-family-office.jpg" alt="Single family office lounge"><div class="body"><h3>Single Family Offices</h3></div></article>
-      <article class="svc"><img class="ph zoomable" src="assets/images/svc-phone-booth.jpg" alt="Private phone booth pods"><div class="body"><h3>Phone Booths</h3></div></article>
-      <article class="svc"><img class="ph zoomable" src="assets/images/svc-cafe.jpg" alt="In-house café"><div class="body"><h3>Café</h3></div></article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============ AMENITIES + HOURS ============ -->
-<section id="amenities" class="band">
-  <div class="wrap amen">
-    <div>
-      <p class="eyebrow">On-site</p>
-      <h2 style="font-size:var(--step-2);margin-bottom:1.2rem">Everything the day needs.</h2>
-      <ul class="amen-list">
-        <li>High-speed Wi-Fi</li><li>In-house café</li>
-        <li>Soundproof phone booths</li><li>Ergonomic furniture</li>
-        <li>Reception &amp; mail handling</li><li>Meeting-room booking</li>
-        <li>Cleaning &amp; maintenance</li><li>Prime metro-linked access</li>
-      </ul>
-    </div>
-    <div class="hours">
-      <p class="kicker">Opening hours</p>
-      <p class="big">Mon - Sat</p>
-      <p>8:30 AM - 6:00 PM</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CTA / CONTACT ============ -->
-<section id="contact" class="cta">
-  <div class="wrap">
-    <p class="eyebrow">Let's talk</p>
-    <h2>Come see it in person.</h2>
-    <div class="cta-actions">
-      <a class="btn" href="https://wa.me/971507101488">Talk to us on WhatsApp</a>
-      <a class="btn btn-line" href="https://bizcitygroup.com/contact-us/">Arrange a private viewing</a>
-      <a class="btn btn-line" href="https://apps.apple.com/us/app/bizcity-group/id6745085702">Explore in the app</a>
-    </div>
-    <div class="contact-grid">
-      <div><span class="kicker">Call / WhatsApp</span><a href="tel:+971507101488">+971 50 710 1488</a><br><a href="tel:+971569939606">+971 56 993 9606</a></div>
-      <div><span class="kicker">Email</span><a href="mailto:admin@bizcitygroup.com">admin@bizcitygroup.com</a></div>
-      <div><span class="kicker">Website</span><a href="https://bizcitygroup.com">bizcitygroup.com</a></div>
-      <div><span class="kicker">App</span><a href="https://apps.apple.com/us/app/bizcity-group/id6745085702">iOS App Store</a> · <a href="https://play.google.com/store/apps/details?id=com.getray.bizcitygroup">Google Play</a></div>
-    </div>
-    <div class="contact-grid" style="margin-top:1.4rem;padding-top:1.4rem">
-      <div><span class="kicker">Biz City</span><span>City Tower 2, 14th Floor, Sheikh Zayed Road, Dubai</span></div>
-      <div><span class="kicker">Biz Elite</span><span>Office 2701, 27th Floor, Sheikh Rashid Tower, DWTC, Dubai</span></div>
-      <div><span class="kicker">Biz Platinum</span><span>21st Floor, Sheikh Rashid Tower, DWTC, Dubai</span></div>
-      <div><span class="kicker">Follow</span><a href="https://www.instagram.com/bizcitygroup/">Instagram</a> · <a href="https://www.linkedin.com/company/bizcitygroup">LinkedIn</a> · <a href="https://www.facebook.com/people/BizcityGroup/61565972231863/">Facebook</a></div>
     </div>
   </div>
 </section>
