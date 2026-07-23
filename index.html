@@ -132,18 +132,18 @@
   a:focus-visible,button:focus-visible{outline:2px solid var(--brass-deep);outline-offset:2px;border-radius:6px}
 
   /* ---------- cover ---------- */
-  .cover{position:relative;background:var(--ink);color:#f4f0e8;overflow:hidden}
-  .cover .wrap{position:relative;z-index:2;padding-block:clamp(2.2rem,1.4rem + 4vw,4.5rem)}
-  .cover-grid{display:grid;gap:clamp(1.5rem,1rem + 3vw,2.75rem);grid-template-columns:1fr;align-items:start}
-  .hero-media{display:flex;flex-direction:column;gap:.65rem}
-  .hero-video{width:100%;max-width:340px;margin-inline:auto;aspect-ratio:9/16;max-height:70vh;
-    object-fit:cover;border-radius:14px;background:#000;display:block;
-    box-shadow:0 16px 40px -20px rgba(0,0,0,.6)}
-  @media(min-width:820px){
-    .cover-grid{grid-template-columns:1.35fr .65fr;align-items:stretch}
-    .hero-media{height:100%}
-    .hero-video{max-width:none;margin-inline:0;aspect-ratio:auto;max-height:none;height:100%;flex:1;min-height:340px}
-  }
+  .cover{position:relative;min-height:clamp(520px,78vh,760px);background:var(--ink);color:#f4f0e8;overflow:hidden}
+  .cover .wrap{position:relative;z-index:2;min-height:inherit;padding-block:clamp(2.2rem,1.4rem + 4vw,4.5rem);display:flex;align-items:center}
+  .cover-grid{width:100%;display:flex;align-items:center;justify-content:center}
+  .cover-copy{max-width:38rem;padding:clamp(1.2rem,1rem + 2vw,2rem);border-radius:18px;
+    background:linear-gradient(135deg,rgba(8,10,13,.72),rgba(8,10,13,.24));
+    backdrop-filter:blur(2px);box-shadow:0 20px 55px -34px rgba(0,0,0,.9)}
+  .cover-action{max-width:none;padding:0;background:none;backdrop-filter:none;box-shadow:none;transform:translateY(clamp(9rem,22vh,13rem))}
+  .cover-action .tour-btn{margin-top:0;padding:.78rem 1.45rem;background:var(--brass);border-color:#e7b866;color:#16130d;
+    font-size:var(--step-0);font-weight:750;box-shadow:0 12px 34px rgba(0,0,0,.48),0 0 0 3px rgba(255,255,255,.1)}
+  .cover-action .tour-btn:hover{background:#f1bd61;border-color:#f1bd61;color:#111}
+  .hero-media{position:absolute;inset:0;z-index:0;overflow:hidden}
+  .hero-video{width:100%;height:100%;margin:0;object-fit:cover;object-position:center;background:#000;display:block}
   .cover h1{color:#fff;font-size:var(--step-4);letter-spacing:-.02em}
   .cover h1 em{font-style:italic;color:var(--brass)}
   .cover .lede{color:#cfc7b6;font-size:var(--step-1);max-width:34ch;margin-top:1.4rem}
@@ -152,8 +152,10 @@
   .cover-meta{display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;margin-top:2rem;
     font-size:var(--step--1);color:#a49c8c;text-transform:uppercase;letter-spacing:.12em}
   .cover-meta b{color:#e9e2d3;font-weight:600}
+  .cover::before{content:"";position:absolute;inset:0;z-index:1;
+    background:linear-gradient(90deg,rgba(5,7,10,.7) 0%,rgba(5,7,10,.32) 50%,rgba(5,7,10,.08) 100%)}
   .cover::after{content:"";position:absolute;inset:0;z-index:1;
-    background:radial-gradient(120% 90% at 82% 12%,rgba(180,145,90,.28),transparent 55%)}
+    background:radial-gradient(120% 90% at 82% 12%,rgba(180,145,90,.22),transparent 55%)}
 
   /* ---------- media slots (placeholders) ---------- */
   .slot{
@@ -357,7 +359,7 @@
     /* page 1 = cover: hide the web hero, show the print lockup treatment */
     .cover{background:#fff;color:#15171c;min-height:calc(100vh - 44mm);
       display:flex;align-items:center;justify-content:center;break-after:page}
-    .cover::after{display:none}
+    .cover::before,.cover::after{display:none}
     .cover .cover-grid{display:none}
     .print-cover{display:block;text-align:center;width:100%;max-width:640px;margin-inline:auto}
     .print-cover img{height:120px;width:auto;margin:0 auto 2.4rem}
@@ -431,6 +433,12 @@
 
 <!-- ============ COVER ============ -->
 <header class="cover">
+  <div class="hero-media">
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" disablepictureinpicture
+           poster="assets/images/hero-showreel-july-22-poster.jpg" aria-label="BizCity Group showreel">
+      <source src="assets/video/hero-showreel-july-22.mp4" type="video/mp4">
+    </video>
+  </div>
   <div class="wrap">
     <div class="print-cover">
       <img src="assets/logos/logo-full.png" alt="BizCity Business Centre">
@@ -438,18 +446,10 @@
       <p class="print-title">Thoughtful &amp; <em>Functional</em> Workspaces</p>
     </div>
     <div class="cover-grid">
-      <div>
-        <p class="eyebrow">A Guided Walkthrough · Dubai</p>
-        <h1>Thoughtful &amp;<br><em>Functional</em> workspaces.</h1>
+      <div class="cover-copy cover-action">
         <a class="tour-btn" href="#locations">Explore the locations
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="m6 13 6 6 6-6"/></svg>
         </a>
-      </div>
-      <div class="hero-media">
-        <video class="hero-video" autoplay muted loop playsinline controls preload="metadata"
-               poster="assets/images/hero-portrait-poster.jpg" aria-label="BizCity Group brand showcase video">
-          <source src="assets/video/hero-portrait.mp4" type="video/mp4">
-        </video>
       </div>
     </div>
   </div>
