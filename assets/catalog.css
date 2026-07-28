@@ -81,7 +81,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brass-deep);outline
 section{padding-block:clamp(2.2rem,1.6rem + 3vw,3.6rem)}
 .band{background:var(--paper-2)}
 .cat-head{max-width:60ch;margin-bottom:clamp(1.2rem,.8rem + 1.5vw,1.8rem)}
-.cat-head h2{font-size:var(--step-3)}
+.cat-head h2{font-size:var(--step-3);white-space:nowrap}
+@media(max-width:560px){.cat-head h2{white-space:normal}}
 .cat-head p{color:var(--neutral);margin-top:.7rem;font-size:var(--step-1);line-height:1.5}
 .gallery,.gallery.two,.gallery.single{
   display:flex;
