@@ -161,21 +161,27 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.6rem 1.5rem;justify-content:space-
 
 @page{size:A4;margin:15mm 14mm 18mm}
 @media print{
-  :root{--paper:#fff;--paper-2:#fff;--card:#fff;--line:#cfc7b6;--body:#232019;--heading:#111;--neutral:#4a463d}
+  :root{--paper:#fff;--paper-2:#fff;--card:#fff;--line:#cfc7b6;--body:#232019;--heading:#111;--neutral:#4a463d;--photo-width:54mm;--gap:5mm}
   html,body{background:#fff}
   body{font-size:10.5pt}
   .bar{display:none}
   .btn,.backlink,.pager,.cta-actions,.lb{display:none!important}
   section{padding-block:0;margin-block:0}
 
-  /* office name page = a dark cover/divider on page 1 */
-  .ohero,.signature,.cta{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  .ohero{height:auto;min-height:calc(100vh - 44mm);display:flex;align-items:center;break-after:page}
-  .ohero-video,.ohero .vcap{display:none!important}
+  /* hide the on-screen video hero; the title block below leads each location */
+  .ohero{display:none!important}
+  .loc-title{padding:2mm 0 6mm;break-after:avoid;break-inside:avoid}
+  .loc-title .kick{color:#977634}
+  .loc-title h1{color:#111;font-size:26pt;line-height:1.05}
+  .loc-title h1 em{color:#977634}
+  .cat-head h2{white-space:normal;font-size:15pt}
+  .cat-head p{font-size:10pt}
+  .cat-head{margin-bottom:4mm}
 
-  /* keep blocks whole, let long galleries flow across pages */
-  .cat-head,.signature,.gallery img,.gallery{break-inside:avoid}
-  .gallery{page-break-inside:avoid}
+  /* keep headings with their gallery, keep each photo whole, flow across pages */
+  .cat-head{break-inside:avoid;break-after:avoid}
+  .gallery img{break-inside:avoid}
+  .gallery{break-inside:auto}
   a[href^="http"]::after{content:""}
   footer{background:#fff;color:#4a463d;border-top:1px solid var(--line)}
 
