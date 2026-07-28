@@ -159,35 +159,35 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.6rem 1.5rem;justify-content:space-
 .lb-close{position:absolute;top:1rem;right:1.2rem;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(0,0,0,.4);color:#fff;font-size:1.5rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .lb-close:hover{background:var(--brass);border-color:var(--brass)}
 
-@page{size:A4;margin:15mm 14mm 18mm}
+@page{size:A4;margin:0}
 @media print{
-  :root{--paper:#fff;--paper-2:#fff;--card:#fff;--line:#cfc7b6;--body:#232019;--heading:#111;--neutral:#4a463d;--photo-width:54mm;--gap:5mm}
-  html,body{background:#fff}
-  body{font-size:10.5pt}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  :root{--paper:#000;--paper-2:#000;--card:#141416;--line:#2a2a2e;--body:#cdc9c0;--heading:#f2efe8;--neutral:#9c968a;--brass:#dd9d4c;--brass-deep:#efcb72;--photo-width:54mm;--gap:5mm}
+  html,body{background:#000}
+  body{font-size:10.5pt;padding:14mm 0 18mm}
   .bar{display:none}
   .btn,.backlink,.pager,.cta-actions,.lb{display:none!important}
   section{padding-block:0;margin-block:0}
+  section + section{margin-top:8mm}
 
   /* hide the on-screen video hero; the title block below leads each location */
   .ohero{display:none!important}
-  .loc-title{padding:2mm 0 6mm;break-after:avoid;break-inside:avoid}
-  .loc-title .kick{color:#977634}
-  .loc-title h1{color:#111;font-size:26pt;line-height:1.05}
-  .loc-title h1 em{color:#977634}
-  .cat-head h2{white-space:normal;font-size:15pt}
+  .loc-title{padding:0 0 6mm;break-after:avoid;break-inside:avoid}
+  .loc-title .kick{color:var(--brass-deep)}
+  .loc-title h1{color:#fff;font-size:26pt;line-height:1.05}
+  .loc-title h1 em{color:var(--brass-deep)}
+  .cat-head h2{white-space:normal;font-size:15pt;color:#fff}
   .cat-head p{font-size:10pt}
-  .cat-head{margin-bottom:4mm}
+  .cat-head{margin-bottom:4mm;break-inside:avoid;break-after:avoid}
 
-  /* keep headings with their gallery, keep each photo whole, flow across pages */
-  .cat-head{break-inside:avoid;break-after:avoid}
+  /* keep each photo whole, let galleries flow across pages */
   .gallery img{break-inside:avoid}
   .gallery{break-inside:auto}
   a[href^="http"]::after{content:""}
-  footer{background:#fff;color:#4a463d;border-top:1px solid var(--line)}
+  footer{background:#000;color:#8f8776;border-top:1px solid #2a2a2e}
 
   /* brand footer repeats on every printed page */
   body::after{content:"BizCity Group \00b7 Workspace Catalogue \00b7 2026";
-    position:fixed;left:0;right:0;bottom:0;text-align:center;font-family:var(--sans);
-    font-size:8pt;letter-spacing:.22em;text-transform:uppercase;color:#977634;
-    -webkit-print-color-adjust:exact;print-color-adjust:exact}
+    position:fixed;left:0;right:0;bottom:6mm;text-align:center;font-family:var(--sans);
+    font-size:8pt;letter-spacing:.22em;text-transform:uppercase;color:#dd9d4c}
 }
