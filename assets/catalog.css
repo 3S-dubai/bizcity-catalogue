@@ -159,15 +159,15 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.6rem 1.5rem;justify-content:space-
 .lb-close{position:absolute;top:1rem;right:1.2rem;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(0,0,0,.4);color:#fff;font-size:1.5rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .lb-close:hover{background:var(--brass);border-color:var(--brass)}
 
-/* consistent margins on EVERY printed page */
-@page{size:A4;margin:15mm 14mm 16mm}
+/* zero page margin so the black reaches every edge (no white border) */
+@page{size:A4;margin:0}
 @media print{
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   :root{--paper:#000;--paper-2:#000;--card:#141416;--line:#2a2a2e;--body:#cdc9c0;--heading:#f2efe8;--neutral:#9c968a;--brass:#dd9d4c;--brass-deep:#efcb72;--photo-width:54mm;--gap:5mm}
   html,body{background:#000}
-  body{font-size:10.5pt}
-  /* full-bleed black that repeats on every page and covers the page margins */
-  body::before{content:"";position:fixed;inset:-20mm;background:#000;z-index:-1}
+  /* full black layer covering the entire physical page, repeated on every page */
+  body::before{content:"";position:fixed;inset:0;background:#000;z-index:-1}
+  body{font-size:10.5pt;padding:14mm 14mm 18mm}
   .wrap{max-width:none;padding-inline:0}
   .bar{display:none}
   .btn,.backlink,.pager,.cta-actions,.lb{display:none!important}
@@ -192,6 +192,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.6rem 1.5rem;justify-content:space-
 
   /* brand footer repeats on every printed page, inside the bottom margin */
   body::after{content:"BizCity Group \00b7 Workspace Catalogue \00b7 2026";
-    position:fixed;left:0;right:0;bottom:-10mm;text-align:center;font-family:var(--sans);
+    position:fixed;left:0;right:0;bottom:7mm;text-align:center;font-family:var(--sans);
     font-size:8pt;letter-spacing:.22em;text-transform:uppercase;color:#dd9d4c}
 }
