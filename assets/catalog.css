@@ -167,11 +167,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.6rem 1.5rem;justify-content:space-
   html,body{background:#000}
   /* full black layer covering the entire physical page, repeated on every page */
   body::before{content:"";position:fixed;inset:0;background:#000;z-index:-1}
-  body{font-size:10.5pt;padding:14mm 14mm 18mm}
+  body{font-size:10.5pt;padding:9mm 14mm 14mm}
   .wrap{max-width:none;padding-inline:0}
   .bar{display:none}
   .btn,.backlink,.pager,.cta-actions,.lb{display:none!important}
-  section{padding-block:0;margin-block:0}
+  /* keep each section whole so it isn't sliced across a page boundary */
+  section{padding-block:0;margin-block:0;break-inside:avoid}
   section + section{margin-top:9mm}
 
   /* hide the on-screen video hero; the title block below leads each location */
